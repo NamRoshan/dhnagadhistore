@@ -4,9 +4,9 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateProductsTable extends Migration
+class AddSlugColumnProduct extends Migration
 {
-    /**
+ /**
      * Run the migrations.
      *
      * @return void
@@ -14,8 +14,7 @@ class UpdateProductsTable extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-           $table->boolean('featured')->default(0)->after('options');
-           $table->boolean('status')->default(0)->after('featured');
+            $table->string('slug');
         });
     }
 
@@ -27,8 +26,7 @@ class UpdateProductsTable extends Migration
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->dropColumn('featured');
-            $table->dropColumn('status');
+           $table->dropColumn('slug');
         });
     }
 }

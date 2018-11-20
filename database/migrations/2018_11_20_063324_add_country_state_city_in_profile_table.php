@@ -4,18 +4,17 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateProductsTable extends Migration
+class AddCountryStateCityInProfileTable extends Migration
 {
-    /**
+  /**
      * Run the migrations.
      *
      * @return void
      */
     public function up()
     {
-        Schema::table('products', function (Blueprint $table) {
-           $table->boolean('featured')->default(0)->after('options');
-           $table->boolean('status')->default(0)->after('featured');
+        Schema::table('users', function (Blueprint $table) {
+            $table->unsignedInteger('status')->default(1);
         });
     }
 
@@ -26,8 +25,7 @@ class UpdateProductsTable extends Migration
      */
     public function down()
     {
-        Schema::table('products', function (Blueprint $table) {
-            $table->dropColumn('featured');
+        Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('status');
         });
     }

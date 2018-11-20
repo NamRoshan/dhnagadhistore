@@ -42,20 +42,20 @@
       @foreach($products as $product)
       <tr>
         <td>{{$product->id}}</td>
-        <td>{{$product->title}}</td>
+        <td>{{$product->tittle}}</td>
         <td>{!! $product->description !!}</td>
         <td>{{$product->slug}}</td>
         <td>
           @if($product->categories()->count() > 0)
           @foreach($product->categories as $children)
-          {{$children->title}},
+          {{$children->tittle}},
           @endforeach
           @else
           <strong>{{"product"}}</strong>
           @endif
         </td>
         <td>${{$product->price}}</td>
-        <td><img src="{{asset('storage/'.$product->thumbnail)}}" alt="{{$product->title}}" class="img-responsive" height="50"/></td>
+        <td><img src="{{asset('storage/'.$product->thumbnail)}}" alt="{{$product->tittle}}" class="img-responsive" height="50"/></td>
         @if($product->trashed())
          <td>{{$product->deleted_at}}</td>
         <td><a class="btn btn-info btn-sm" href="{{route('admin.product.recover',$product->id)}}">Restore</a> | <a class="btn btn-danger btn-sm" href="javascript:;" onclick="confirmDelete('{{$product->id}}')">Delete</a>
