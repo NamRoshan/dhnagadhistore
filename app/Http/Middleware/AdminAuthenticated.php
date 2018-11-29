@@ -17,7 +17,7 @@ class AdminAuthenticated
     public function handle($request, Closure $next)
     {
         if(Auth::user()->role->name=='customer'){
-            return redirect('/home')->with('message',"You are NOt Allowed to Access");
+            return redirect('/')->with('message',"You are NOt Allowed to Access");
         }
         return $next($request);
     }

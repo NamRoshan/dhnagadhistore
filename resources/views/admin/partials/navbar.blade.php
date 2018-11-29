@@ -6,12 +6,7 @@
         Dashboard <span class="sr-only">(current)</span>
       </a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">
-        <span data-feather="file"></span>
-        Orders
-      </a>
-    </li>
+
     <li class="nav-item dropdown">
       <a id="productDropdown" class="nav-link @if(request()->url() == route('admin.product.index')) {{'active'}} @endif  dropdown-toggle" href="javascript:;" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span data-feather="shopping-cart"></span>
@@ -36,7 +31,7 @@
       
     </li>
     <li class="nav-item">
-      <a class="nav-link  @if(request()->url() == route('admin.profile.index')) {{'active'}} @else {{''}} @endif" href="{{route('admin.profile.index')}}">
+      <a class="nav-link  href="">
         <span data-feather="users"></span>
         Customers
       </a>

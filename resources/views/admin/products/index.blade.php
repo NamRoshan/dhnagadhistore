@@ -32,6 +32,7 @@
         <th>Slug</th>
         <th>Categories</th>
         <th>Price</th>
+        <th>Quantity</th>
         <th>Thumbnail</th>
         <th>Date Created</th>
         <th>Actions</th>
@@ -48,13 +49,14 @@
         <td>
           @if($product->categories()->count() > 0)
           @foreach($product->categories as $children)
-          {{$children->tittle}},
+          {{$children->title}},
           @endforeach
           @else
           <strong>{{"product"}}</strong>
           @endif
         </td>
-        <td>${{$product->price}}</td>
+        <td>Rs{{$product->price}}</td>
+        <td>{{$product->quantity}}</td>
         <td><img src="{{asset('storage/'.$product->thumbnail)}}" alt="{{$product->tittle}}" class="img-responsive" height="50"/></td>
         @if($product->trashed())
          <td>{{$product->deleted_at}}</td>

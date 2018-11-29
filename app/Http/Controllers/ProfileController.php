@@ -75,6 +75,7 @@ class ProfileController extends Controller
             'state_id' => $request->state_id,
             'city_id' => $request->city_id,
             'phone' => $request->phone,
+             'slug' => $request->slug,
  
         ]);
        }

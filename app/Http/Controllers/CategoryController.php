@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
+use App\Product;
+use App\Cart;
+use Session;
 
 class CategoryController extends Controller
 {
@@ -14,7 +17,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories=Category::paginate(3);
+        $categories=Category::paginate(8);
         return view('admin.categories.index',compact('categories'));
     }
         /**
@@ -26,6 +29,16 @@ class CategoryController extends Controller
     {
         $categories = Category::onlyTrashed()->paginate(3);
         return view('admin.categories.index', compact('categories'));
+    }
+     public function single(Category $slug){
+      //dd(Session::get('cart'));
+                if(!Session::has('cart')){
+      
+      }
+      $cart = Session::get('cart');
+       $categories = Category::with('childrens')->get();
+       $products = Product::with('categories')->paginate(100);
+      return view('single', compact('slug','categories','products','cart'));
     }
 
 
@@ -100,7 +113,7 @@ class CategoryController extends Controller
         $saved = $category->save();
         //return back to the /add/edit form
         if($saved)
-            return back()->with('message','Record Successfully Updated!');
+               return redirect(route('admin.category.index'))->with('message', "'Record Successfully Updated!");
         else
             return back()->with('message', 'Error Updating Category');
 

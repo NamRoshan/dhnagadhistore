@@ -8,16 +8,16 @@ use App\Category;
 
 class Product extends Model
 {
-	use SoftDeletes;
+    use SoftDeletes;
     
     protected $guarded = [];
     protected $dates = ['deleted_at'];
     //
 
     public function categories(){
-    	return $this->belongsToMany('App\Category','category_product');
+        return $this->belongsToMany('App\Category','category_product');
     }
     public function getRouteKeyName(){
-   	 return 'slug';
-	}
+     return 'slug';
+    }
 }

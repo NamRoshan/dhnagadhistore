@@ -1,11 +1,32 @@
 @extends('admin.app')
 @section('breadcrumbs')
+
 <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
 <li class="breadcrumb-item "><a href="{{route('admin.product.index')}}">Products</a></li>
 <li class="breadcrumb-item active" aria-current="page">Add/Edit Products</li>
 @endsection
 @section('content')
 <h2 class="modal-title">Add/Edit Products</h2>
+       <!--  this is for first item show -->
+<!--   @if($categories->count() > 0)
+      @foreach($categories as $category)
+        @if($category->childrens()->count() > 0)
+           @foreach($category->childrens as $children)
+           
+            @if($category->parents()->count() > 0)
+            @foreach($category->parents as $parent)
+       
+            @endforeach
+           @else
+
+                @endif
+           @endforeach
+      @else
+    
+      {{$category->title}} <br>
+      @endif
+      @endforeach
+    @endif -->
 <form  action="@if(isset($product)) {{route('admin.product.update', $product)}} @else {{route('admin.product.store')}} @endif" method="post" accept-charset="utf-8" enctype="multipart/form-data">
 	<div class="row">
 		@csrf
@@ -52,7 +73,7 @@
 				<label class="form-control-label">Price: </label>
 				<div class="input-group mb-3">
 					<div class="input-group-prepend">
-						<span class="input-group-text" id="basic-addon1">$</span>
+						<span class="input-group-text" id="basic-addon1">Rs</span>
 					</div>
 					<input type="text" class="form-control" placeholder="0.00" aria-label="Username" aria-describedby="basic-addon1" name="price" value="{{@$product->price}}" />
 				</div>
@@ -61,11 +82,23 @@
 				<label class="form-control-label">Discount: </label>
 				<div class="input-group mb-3">
 					<div class="input-group-prepend">
-						<span class="input-group-text" id="basic-addon1">$</span>
+						<span class="input-group-text" id="basic-addon1">Rs</span>
 					</div>
 					<input type="text" class="form-control" name="discount_price" placeholder="0.00" aria-label="discount_price" aria-describedby="discount" value="{{@$product->discount_price}}" />
 				</div>
 			</div>
+		</div>
+				<div class="form-group row">
+			<div class="col-6">
+				<label class="form-control-label">Quentity: </label>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text" id="basic-addon1"></span>
+					</div>
+					<input type="text" class="form-control" placeholder="0.00" aria-label="Username" aria-describedby="basic-addon1" name="quantity" value="{{@$product->quantity}}" />
+				</div>
+			</div>
+	
 		</div>
 		<div class="form-group row">
 			<div class="card col-sm-12 p-0 mb-2">
@@ -132,15 +165,37 @@
 			<li class="list-group-item active"><h5>Select Categories</h5></li>
 			<li class="list-group-item ">
 				<select name="category_id[]" id="select2" class="form-control" multiple>
-					@if($categories->count() > 0)
-					@foreach($categories as $category)
+			
+
+
+       <!--  this is for first item show -->
+  @if($categories->count() > 0)
+      @foreach($categories as $category)
+        @if($category->childrens()->count() > 0)
+           @foreach($category->childrens as $children)
+           
+            @if($category->parents()->count() > 0)
+            @foreach($category->parents as $parent)
+       
+            @endforeach
+           @else
+
+                @endif
+           @endforeach
+      @else
+      <!-- last sub category -->
 					<option value="{{$category->id}}"
 						@if(!is_null($ids) && in_array($category->id, $ids))
 						{{'selected'}}
 						@endif
 					>{{$category->title}}</option>
-					@endforeach
-					@endif
+      @endif
+      @endforeach
+    @endif
+
+
+
+
 				</select>
 			</li>
 		</ul>

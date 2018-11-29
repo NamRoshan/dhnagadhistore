@@ -29,6 +29,7 @@ class AdminUser extends Seeder
            ]);
            Profile::create([
              'user_id'=>$user->id
+             // 'slug'=>'1',
            ]);
 
     }
