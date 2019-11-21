@@ -58,7 +58,7 @@
            <input type="hidden" name="" value="{{$val= $category->id}}">
                        <!-- this is for second item show -->
                   @php               
-     $conn=new mysqli("localhost","root","","dhangadhishop");
+     $conn=new mysqli("localhost","root","Roshan12!@","laravel_dhangadhi_store");
       if(!$conn){
         echo'Error on Database';
       }
@@ -70,7 +70,7 @@
      <input type="hidden" name="" value="{{ $val=  $rown['category_id'] }}">
             <!-- this is for second item show -->
                   @php               
-     $con=new mysqli("localhost","root","","dhangadhishop");
+     $con=new mysqli("localhost","root","Roshan12!@","laravel_dhangadhi_store");
       if(!$con){
         echo'Error on Database';
       }
@@ -81,7 +81,7 @@
     @endphp
      <input type="hidden" name="" value="{{ $vals=  $row['category_id'] }}">
                                                                       @php 
-     $cons=new mysqli("localhost","root","","dhangadhishop");
+     $cons=new mysqli("localhost","root","Roshan12!@","laravel_dhangadhi_store");
       if(!$cons){
         echo'Error on Database';
       }
@@ -198,7 +198,7 @@
                                    <input type="hidden" name="" value="{{$val= $slug->id }}"> 
                        <div id="my-tab-content" class="tab-content">
                                                                    @php
-     $consss=new mysqli("localhost","root","","dhangadhishop");
+     $consss=new mysqli("localhost","root","Roshan12!@","laravel_dhangadhi_store");
       if(!$consss){
         echo'Error on Database';
       }
@@ -209,7 +209,7 @@
     @endphp
     <input type="hidden" name="" value="{{$uid=$rowsss['product_id'] }}">
                                                                @php
-     $con=new mysqli("localhost","root","","dhangadhishop");
+     $con=new mysqli("localhost","root","Roshan12!@","laravel_dhangadhi_store");
       if(!$con){
         echo'Error on Database';
       }

@@ -1,56 +1,53 @@
 @extends('dashboard.master')
 @section('home-main')
-     
 
-            <!-- End header -->
-            <!-- Start slider area -->
-            <div class="slider-area">
-                <div id="slider" class="nivoSlider">
-                    <img style ="display:none" src="img/slider/1.jpg"  data-thumb="img/slider/1.jpg"  alt="" title="#htmlcaption1"/>      
-                    <img style ="display:none" src="img/slider/2.jpg"  data-thumb="img/slider/2.jpg"  alt="" title="#htmlcaption2"/>
-                </div>
-                <div id="htmlcaption1" class="pos-slideshow-caption nivo-html-caption nivo-caption">
-                    <div class="timing-bar"></div>
-                    <div class="pos-slideshow-info pos-slideshow-info1">
-                        <div class="container">
-                            <div class="pos_description hidden-xs hidden-sm">
-                                <div class="title1"><span class="txt">Camera Digital</span></div>
-                                <div class="title2"><span class="txt">Brand D5500</span></div>
-                                <div class="pos-slideshow-readmore">
-                                    <a href="http://bootexperts.com/" title="Shop now">Shop now</a>   
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="htmlcaption2" class="pos-slideshow-caption nivo-html-caption nivo-caption">
-                    <div class="timing-bar"></div>
-                    <div class="pos-slideshow-info pos-slideshow-info2">
-                        <div class="container">
-                            <div class="pos_description hidden-xs hidden-sm">
-                                <div class="title1"><span class="txt">Tivi Brand Name</span></div>
-                                <div class="title2"><span class="txt">48" Full HD Flat TV</span></div>
-                                <div class="pos-slideshow-readmore">
-                                    <a href="#" title="Shop now">Shop now</a>   
-                                </div>
-                            </div>
-                        </div>
+<div class="slider-area">
+  <div id="slider" class="nivoSlider">
+      <img style ="display:none" src="img/slider/1.jpg"  data-thumb="img/slider/1.jpg"  alt="" title="#htmlcaption1"/>      
+      <img style ="display:none" src="img/slider/2.jpg"  data-thumb="img/slider/2.jpg"  alt="" title="#htmlcaption2"/>
+  </div>
+  <div id="htmlcaption1" class="pos-slideshow-caption nivo-html-caption nivo-caption">
+      <div class="timing-bar"></div>
+      <div class="pos-slideshow-info pos-slideshow-info1">
+          <div class="container">
+              <div class="pos_description hidden-xs hidden-sm">
+                  <div class="title1"><span class="txt">Arduino Small Car</span></div>
+                  <div class="title2"><span class="txt">Brand Projectsaathi</span></div>
+                  <div class="pos-slideshow-readmore">
+                      <!-- <a href="http://bootexperts.com/" title="Shop now">Shop now</a>    -->
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+    <div id="htmlcaption2" class="pos-slideshow-caption nivo-html-caption nivo-caption">
+        <div class="timing-bar"></div>
+        <div class="pos-slideshow-info pos-slideshow-info2">
+            <div class="container">
+                <div class="pos_description hidden-xs hidden-sm">
+                    <div class="title1"><span class="txt">Arduino Uno Smart Robot</span></div>
+                    <div class="title2"><span class="txt">"Machine Learning Concept</span></div>
+                    <div class="pos-slideshow-readmore">
+                       <!--  <a href="#" title="Shop now">Shop now</a>  -->  
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
             <!-- End slider area -->
             <!-- Start categori area -->
-            <div class="categori-area">
-                <div class="container">
-                    <div class="row">
-                        <!-- Start categori menu -->
-                        <div class="col-xs-12 col-sm-4 col-md-3">
-                            <div class="categori-menu">
-                                <div class="sidebar-menu-title">
-                                    <h2><i class="fa fa-th-list"></i>Categories</h2>
-                                </div>
- 
-                                <div class="sidebar-menu">
+<div class="categori-area">
+    <div class="container">
+        <div class="row">
+            <!-- Start categori menu -->
+            <div class="col-xs-12 col-sm-4 col-md-3">
+                <div class="categori-menu">
+                    <div class="sidebar-menu-title">
+                        <h2><i class="fa fa-th-list"></i>Categories</h2>
+                    </div>
+
+                    <div class="sidebar-menu">
                                                                
      <ul>
              <!--  this is for first item show -->
@@ -65,14 +62,14 @@
             @endforeach
            @else
 
-  <li><a href="shop-grid.html">{{$category->title}} 
+  <li><a href="">{{$category->title}} 
       <input type="hidden" name="" value="{{ $val= $category->id}}"> </a>
                                             <div class="megamenudown-sub">
                                                 <div class="mega-top">
 
                                           <!-- this is for second item show -->
                   @php               
-     $con=new mysqli("localhost","root","","dhangadhishop");
+     $con=new mysqli("localhost","root","Roshan12!@","laravel_dhangadhi_store");
       if(!$con){
         echo'Error on Database';
       }
@@ -83,7 +80,7 @@
     @endphp
      <input type="hidden" name="" value="{{ $vals=  $row['category_id'] }}">
                                                                       @php 
-     $cons=new mysqli("localhost","root","","dhangadhishop");
+     $cons=new mysqli("localhost","root","Roshan12!@","laravel_dhangadhi_store");
       if(!$cons){
         echo'Error on Database';
       }
@@ -94,15 +91,14 @@
               @endphp
 
 
-                                                    <div class="mega-item-menu">
+                          <div class="mega-item-menu">
 
 
-                                                        <a href="shop-grid.html" class="title"><span></span></a>
-
+                          <a href="{{route('cart.single', $rows['slug'])}}" class="title"><span> {{$rows['title']}}</span></a>
                
 
  @php               
-     $con=new mysqli("localhost","root","","dhangadhishop");
+     $con=new mysqli("localhost","root","Roshan12!@","laravel_dhangadhi_store");
       if(!$con){
         echo'Error on Database';
       }
@@ -113,7 +109,7 @@
     @endphp
      <input type="hidden" name="" value="{{ $va=  $row['category_id'] }}">
      @php
-     $conss=new mysqli("localhost","root","","dhangadhishop");
+     $conss=new mysqli("localhost","root","Roshan12!@","laravel_dhangadhi_store");
       if(!$conss){
         echo'Error on Database';
       }
@@ -124,7 +120,7 @@
     @endphp
     <input type="hidden" name="" value="{{$valsss=$rowss['category_id']}}">
        @php
-     $consss=new mysqli("localhost","root","","dhangadhishop");
+     $consss=new mysqli("localhost","root","Roshan12!@","laravel_dhangadhi_store");
       if(!$consss){
         echo'Error on Database';
       }

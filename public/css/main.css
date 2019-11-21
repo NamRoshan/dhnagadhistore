@@ -278,3 +278,14 @@ textarea {
         page-break-after: avoid;
     }
 }
+
+footer{
+    background: #4e1472;
+    padding-top:  20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+footer p, footer h2{
+    color: white;
+}

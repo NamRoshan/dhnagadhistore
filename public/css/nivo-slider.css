@@ -19,6 +19,9 @@
 	top:0px;
 	left:0px;
 	max-width: none;
+	height: 600px !important;
+	object-fit: cover;
+	object-position: center;
 }
 .nivo-main-image {
 	display: block !important;

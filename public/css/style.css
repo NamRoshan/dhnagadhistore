@@ -330,7 +330,7 @@ body.home-1{}
   float: left;
   width: 101px;
   right: 0;
-  background: #f06262 none repeat scroll 0 0;
+  background: #b000a5 none repeat scroll 0 0;
   border-bottom: 2px solid #ca3030;
   border-radius: 1px;
   border-style: none none solid;
@@ -347,7 +347,7 @@ body.home-1{}
   transition: all 300ms ease 0s;
 }
 .search-box button:hover{
-  background: #ffa200;
+  background:#4e1472;
   border-color: #e68700;
 }
 .shoping-cart{
@@ -357,7 +357,7 @@ body.home-1{}
   position: relative;
 }
 .shoping-cart a span{
-  background: #ffa200 url("../img/cart.png") no-repeat scroll 10px 9px;
+  background: #4e1472 url("../img/cart.png") no-repeat scroll 10px 9px;
   border-bottom: 2px solid #e68700;
   box-shadow: 0 0 0 3px rgba(228, 228, 228, 1);
   color: #fff;
@@ -568,7 +568,7 @@ body.home-1{}
   float: left;
 }
 .mainmenu ul li a{
-  color: #505050;
+  color: white;
   display: block;
   font-family: "Khula",sans-serif;
   font-size: 20px;
@@ -584,7 +584,7 @@ body.home-1{}
   color: #fff;
 }
 .mainmenu ul li a.home{
-  background: #454545 none repeat scroll 0 0;
+  background:#b000a5 none repeat scroll 0 0;
   color: #fff;
 }
 .mainmenu ul li a:hover{}
@@ -802,8 +802,8 @@ body.home-1{}
   margin-top: 35px;
 }
 .sidebar-menu-title h2 {
-  background: #ffa200;
-  border-bottom: 2px solid #dc8c00;
+  background: #b000a5;
+  border-bottom: 2px solid #e1d346;
   color: #fff;
   cursor: pointer;
   font-size: 22px;
@@ -1167,6 +1167,12 @@ body.home-1{}
   line-height: 20px;
   margin: 0;
   text-transform: capitalize;
+}
+.featured-image a img {
+    height: 237px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 .progrtee-box:hover h4, 
 .progrtee-box:hover p {
