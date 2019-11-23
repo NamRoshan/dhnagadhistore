@@ -39,31 +39,31 @@
             <!-- Start categori area -->
 <div class="categori-area">
     <div class="container">
-        <div class="row">
+       <div class="row">
             <!-- Start categori menu -->
-            <div class="col-xs-12 col-sm-4 col-md-3">
-                <div class="categori-menu">
-                    <div class="sidebar-menu-title">
-                        <h2><i class="fa fa-th-list"></i>Categories</h2>
-                    </div>
+        <div class="col-xs-12 col-sm-4 col-md-3">
+          <div class="categori-menu">
+            <div class="sidebar-menu-title">
+                <h2><i class="fa fa-th-list"></i>Categories</h2>
+            </div>
 
-                    <div class="sidebar-menu">
-                                                               
-     <ul>
+            <div class="sidebar-menu">
+                                                           
+            <ul>
              <!--  this is for first item show -->
-  @if($categories->count() > 0)
-      @foreach($categories as $category)
-        @if($category->childrens()->count() > 0)
-           @foreach($category->childrens as $children)
-            @endforeach
-            @if($category->parents()->count() > 0)
-            @foreach($category->parents as $parent)
-       
-            @endforeach
-           @else
+          @if($categories->count() > 0)
+              @foreach($categories as $category)
+                @if($category->childrens()->count() > 0)
+                   @foreach($category->childrens as $children)
+                    @endforeach
+                    @if($category->parents()->count() > 0)
+                    @foreach($category->parents as $parent)
+               
+                    @endforeach
+                   @else
 
-  <li><a href="">{{$category->title}} 
-      <input type="hidden" name="" value="{{ $val= $category->id}}"> </a>
+            <li><a href="">{{$category->title}} 
+                <input type="hidden" name="" value="{{ $val= $category->id}}"> </a>
                                             <div class="megamenudown-sub">
                                                 <div class="mega-top">
 
